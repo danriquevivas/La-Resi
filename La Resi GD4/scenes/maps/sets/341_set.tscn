@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://csdfam4053ery"]
+
+[ext_resource type="Texture2D" uid="uid://kj52u6qf2tvt" path="res://art/rooms/341.png" id="1_l0yow"]
+
+[node name="341 Set" type="StaticBody2D"]
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(204, 108)
+texture = ExtResource("1_l0yow")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=17 format=3 uid="uid://cb1pyjtgc6j52"]
+
+[ext_resource type="PackedScene" uid="uid://cm6obw3c4fhii" path="res://scenes/maps/104.tscn" id="1_8o1wj"]
+[ext_resource type="PackedScene" uid="uid://c2skul06c18g0" path="res://scenes/maps/243.tscn" id="2_pi5aj"]
+[ext_resource type="PackedScene" uid="uid://csdfam4053ery" path="res://scenes/maps/341.tscn" id="3_8w3rs"]
+[ext_resource type="PackedScene" uid="uid://dragc85r0ssdy" path="res://scenes/maps/lobby.tscn" id="4_1gtbh"]
+[ext_resource type="PackedScene" uid="uid://bjdp8e326k1vb" path="res://scenes/player.tscn" id="5_dtrvg"]
+[ext_resource type="PackedScene" uid="uid://bylunlrhalo2r" path="res://scenes/static people/martina_cocinera.tscn" id="6_7yiwm"]
+[ext_resource type="PackedScene" uid="uid://dgwd0j2d7thnb" path="res://scenes/static people/ahmed.tscn" id="7_q4uox"]
+[ext_resource type="PackedScene" uid="uid://boaostnpg7t7s" path="res://scenes/static people/raul.tscn" id="8_nprad"]
+[ext_resource type="PackedScene" uid="uid://clhdcglg10ius" path="res://scenes/static people/yoly_cocinera.tscn" id="9_sxh7l"]
+[ext_resource type="PackedScene" uid="uid://bm00qqrlbn4wg" path="res://scenes/static people/celeste_cocinera.tscn" id="10_ugimv"]
+[ext_resource type="PackedScene" uid="uid://c5085fx10lsnn" path="res://scenes/static people/carmen_cocinera.tscn" id="11_7s6qw"]
+[ext_resource type="PackedScene" uid="uid://bob7wcpwid5x2" path="res://scenes/static people/victoria_cocinera.tscn" id="11_55yh7"]
+[ext_resource type="PackedScene" uid="uid://df8ily2gowdo8" path="res://scenes/static people/santi_conserje.tscn" id="12_nt5cc"]
+[ext_resource type="PackedScene" uid="uid://bujmqd3tf1urf" path="res://scenes/static people/ignacio_conserje.tscn" id="13_jhthm"]
+[ext_resource type="PackedScene" uid="uid://crdbr8da6ohpk" path="res://scenes/static people/jose_conserje.tscn" id="13_turxv"]
+[ext_resource type="PackedScene" uid="uid://d4e682flpwf2d" path="res://scenes/static people/espe_conserje.tscn" id="15_5ghti"]
+
+[node name="Game" type="Node2D"]
+
+[node name="104" parent="." instance=ExtResource("1_8o1wj")]
+
+[node name="243" parent="." instance=ExtResource("2_pi5aj")]
+position = Vector2(0, 960)
+
+[node name="341" parent="." instance=ExtResource("3_8w3rs")]
+position = Vector2(816, 2352)
+
+[node name="Lobby" parent="." instance=ExtResource("4_1gtbh")]
+position = Vector2(1728, 0)
+
+[node name="Static People" type="Node" parent="."]
+
+[node name="ahmed" parent="Static People" instance=ExtResource("7_q4uox")]
+position = Vector2(1432, 376)
+
+[node name="martina cocinera" parent="Static People" instance=ExtResource("6_7yiwm")]
+position = Vector2(1976, 640)
+
+[node name="yoly cocinera" parent="Static People" instance=ExtResource("9_sxh7l")]
+position = Vector2(2136, 590)
+
+[node name="raul" parent="Static People" instance=ExtResource("8_nprad")]
+position = Vector2(1192, 376)
+
+[node name="celeste cocinera" parent="Static People" instance=ExtResource("10_ugimv")]
+position = Vector2(2064, 496)
+
+[node name="carmen cocinera" parent="Static People" instance=ExtResource("11_7s6qw")]
+position = Vector2(2216, 792)
+
+[node name="victoria cocinera" parent="Static People" instance=ExtResource("11_55yh7")]
+position = Vector2(1888, 496)
+
+[node name="santi conserje" parent="Static People" instance=ExtResource("12_nt5cc")]
+position = Vector2(5696, 2088)
+
+[node name="ignacio conserje" parent="Static People" instance=ExtResource("13_jhthm")]
+position = Vector2(1160, 720)
+
+[node name="jose conserje" parent="Static People" instance=ExtResource("13_turxv")]
+position = Vector2(4509, 2100)
+
+[node name="espe conserje" parent="Static People" instance=ExtResource("15_5ghti")]
+position = Vector2(4408, 2100)
+
+[node name="Player" parent="." instance=ExtResource("5_dtrvg")]
+position = Vector2(778, 390)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_smoothed = true

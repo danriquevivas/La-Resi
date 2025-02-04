@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://6hyb6m1htr86"]
+
+[ext_resource type="Texture2D" uid="uid://cj0cpbsj0kmja" path="res://art/characters/23-ahmed_sprites/ahmed-idle-animation.png" id="1_dn601"]
+[ext_resource type="Script" path="res://scripts/static_person.gd" id="1_jphp0"]
+[ext_resource type="Texture2D" uid="uid://4m87ttkv2ia7" path="res://art/characters/shadow.png" id="2_7v75j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjkrl"]
+atlas = ExtResource("1_dn601")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_224po"]
+atlas = ExtResource("1_dn601")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0xn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjkrl")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_224po")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r5ql"]
+size = Vector2(24, 10)
+
+[node name="Static Person" type="StaticBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_jphp0")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, -5.5)
+texture = ExtResource("2_7v75j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10.5)
+sprite_frames = SubResource("SpriteFrames_d0xn8")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_7r5ql")

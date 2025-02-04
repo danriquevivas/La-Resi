@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5085fx10lsnn"]
+
+[ext_resource type="PackedScene" uid="uid://6hyb6m1htr86" path="res://scenes/static people/static_person.tscn" id="1_g7lhq"]
+[ext_resource type="Texture2D" uid="uid://b0a0wphn2b7ua" path="res://art/characters/30-carmen_cocinera_sprites/carmen_cocinera-idle-animation.png" id="2_ep2cu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hfnm"]
+atlas = ExtResource("2_ep2cu")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43edv"]
+atlas = ExtResource("2_ep2cu")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3p85x"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3hfnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43edv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}]
+
+[node name="carmen cocinera" instance=ExtResource("1_g7lhq")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_3p85x")
+flip_h = true

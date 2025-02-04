@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4e682flpwf2d"]
+
+[ext_resource type="PackedScene" uid="uid://6hyb6m1htr86" path="res://scenes/static people/static_person.tscn" id="1_ngwng"]
+[ext_resource type="Texture2D" uid="uid://c1dq3cx875tn" path="res://art/characters/35-espe_conserje_sprites/espe_conserje-idle-animation.png" id="2_qi0rb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h0kp"]
+atlas = ExtResource("2_qi0rb")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw4yx"]
+atlas = ExtResource("2_qi0rb")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tji8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h0kp")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_lw4yx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}]
+
+[node name="espe conserje" instance=ExtResource("1_ngwng")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_5tji8")
+flip_h = true

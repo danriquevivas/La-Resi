@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://l5qexpxxriy0"]
+
+[ext_resource type="Texture2D" uid="uid://biqkgysi8it33" path="res://art/menu/base.png" id="1_ewxhm"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_kkur0"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kkur0")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(576, 328)
+scale = Vector2(4, 4)
+texture = ExtResource("1_ewxhm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 360.0
+offset_right = 616.0
+offset_bottom = 400.0
+
+[node name="Button 104" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = -240.0
+offset_top = -200.0
+offset_right = -151.0
+offset_bottom = -125.0
+theme_override_font_sizes/font_size = 48
+text = "104
+"
+
+[node name="Button 243" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -200.0
+offset_right = 1.0
+offset_bottom = -125.0
+theme_override_font_sizes/font_size = 48
+text = "243
+"
+
+[node name="Button 341" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -200.0
+offset_right = 153.0
+offset_bottom = -125.0
+theme_override_font_sizes/font_size = 48
+text = "341
+"
+
+[node name="Button Lobby" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = -72.0
+offset_right = 29.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 48
+text = "Lobby
+"
+
+[node name="Button The Lab" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = -48.0
+offset_right = 445.0
+offset_bottom = 27.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.568627, 0.654902, 1)
+theme_override_font_sizes/font_size = 48
+text = "The Lab"
+
+[node name="Button Exit" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 445.0
+offset_bottom = 147.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.815686, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+
+[connection signal="pressed" from="Buttons/Button 104" to="." method="_on_button_104_pressed"]
+[connection signal="pressed" from="Buttons/Button 243" to="." method="_on_button_243_pressed"]
+[connection signal="pressed" from="Buttons/Button 341" to="." method="_on_button_341_pressed"]
+[connection signal="pressed" from="Buttons/Button Lobby" to="." method="_on_button_lobby_pressed"]
+[connection signal="pressed" from="Buttons/Button The Lab" to="." method="_on_button_the_lab_pressed"]
+[connection signal="pressed" from="Buttons/Button Exit" to="." method="_on_button_exit_pressed"]

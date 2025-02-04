@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://boaostnpg7t7s"]
+
+[ext_resource type="PackedScene" uid="uid://6hyb6m1htr86" path="res://scenes/static people/static_person.tscn" id="1_cewj2"]
+[ext_resource type="Texture2D" uid="uid://bo38xixse81ym" path="res://art/characters/25-raul_sprites/raul-idle-animation.png" id="2_ip2ji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50240"]
+atlas = ExtResource("2_ip2ji")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6pwl"]
+atlas = ExtResource("2_ip2ji")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjx6l"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_50240")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6pwl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}]
+
+[node name="raul" instance=ExtResource("1_cewj2")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_tjx6l")
+flip_h = true

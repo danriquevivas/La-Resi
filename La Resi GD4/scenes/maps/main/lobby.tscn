@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://08h42ww7n2a1"]
+
+[ext_resource type="Script" path="res://scenes/maps/main/lobby.gd" id="1_1ic12"]
+[ext_resource type="PackedScene" uid="uid://dragc85r0ssdy" path="res://scenes/maps/sets/lobby_set.tscn" id="1_yiw0u"]
+[ext_resource type="PackedScene" uid="uid://bylunlrhalo2r" path="res://scenes/static people/martina_cocinera.tscn" id="2_ve4qy"]
+[ext_resource type="PackedScene" uid="uid://clhdcglg10ius" path="res://scenes/static people/yoly_cocinera.tscn" id="3_25c0n"]
+[ext_resource type="PackedScene" uid="uid://bm00qqrlbn4wg" path="res://scenes/static people/celeste_cocinera.tscn" id="4_0cuhr"]
+[ext_resource type="PackedScene" uid="uid://c5085fx10lsnn" path="res://scenes/static people/carmen_cocinera.tscn" id="5_qrrul"]
+[ext_resource type="PackedScene" uid="uid://bob7wcpwid5x2" path="res://scenes/static people/victoria_cocinera.tscn" id="6_ogk6x"]
+[ext_resource type="PackedScene" uid="uid://df8ily2gowdo8" path="res://scenes/static people/santi_conserje.tscn" id="7_7x52a"]
+[ext_resource type="PackedScene" uid="uid://crdbr8da6ohpk" path="res://scenes/static people/jose_conserje.tscn" id="8_yk354"]
+[ext_resource type="PackedScene" uid="uid://d4e682flpwf2d" path="res://scenes/static people/espe_conserje.tscn" id="9_a63y8"]
+[ext_resource type="PackedScene" uid="uid://bjdp8e326k1vb" path="res://scenes/player.tscn" id="10_n03wk"]
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_1ic12")
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Lobby Set" parent="Map" instance=ExtResource("1_yiw0u")]
+scale = Vector2(5, 5)
+
+[node name="Static People" type="Node2D" parent="."]
+
+[node name="martina cocinera" parent="Static People" instance=ExtResource("2_ve4qy")]
+position = Vector2(352, 784)
+
+[node name="yoly cocinera" parent="Static People" instance=ExtResource("3_25c0n")]
+position = Vector2(512, 734)
+
+[node name="celeste cocinera" parent="Static People" instance=ExtResource("4_0cuhr")]
+position = Vector2(440, 640)
+
+[node name="carmen cocinera" parent="Static People" instance=ExtResource("5_qrrul")]
+position = Vector2(592, 936)
+
+[node name="victoria cocinera" parent="Static People" instance=ExtResource("6_ogk6x")]
+position = Vector2(264, 640)
+
+[node name="santi conserje" parent="Static People" instance=ExtResource("7_7x52a")]
+position = Vector2(5040, 2608)
+
+[node name="jose conserje" parent="Static People" instance=ExtResource("8_yk354")]
+position = Vector2(3461, 2616)
+
+[node name="espe conserje" parent="Static People" instance=ExtResource("9_a63y8")]
+position = Vector2(3360, 2616)
+
+[node name="Player" parent="." instance=ExtResource("10_n03wk")]
+position = Vector2(3056, 1280)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 5280
+limit_bottom = 3120
+
+[node name="Back to Menu" type="Button" parent="."]
+offset_left = 3656.0
+offset_top = 2184.0
+offset_right = 3709.0
+offset_bottom = 2215.0
+scale = Vector2(2.09741, 2.10113)
+text = "Back?"
+
+[connection signal="pressed" from="Back to Menu" to="." method="_on_back_to_menu_pressed"]

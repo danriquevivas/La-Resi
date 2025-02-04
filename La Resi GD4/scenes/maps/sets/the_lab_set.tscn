@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0p16p3uxpo8s"]
+
+[ext_resource type="Texture2D" uid="uid://bm8o6ey2isea" path="res://art/rooms/base.png" id="1_vnrk5"]
+
+[node name="The Lab Set" type="StaticBody2D"]
+scale = Vector2(4, 4)
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(204, 108)
+texture = ExtResource("1_vnrk5")

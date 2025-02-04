@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://df8ily2gowdo8"]
+
+[ext_resource type="PackedScene" uid="uid://6hyb6m1htr86" path="res://scenes/static people/static_person.tscn" id="1_bij4e"]
+[ext_resource type="Texture2D" uid="uid://cjhlccqfm8ywp" path="res://art/characters/33-santi_conserje_sprites/santi_conserje-idle-animation.png" id="2_sdo6k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7spe"]
+atlas = ExtResource("2_sdo6k")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnunx"]
+atlas = ExtResource("2_sdo6k")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7uag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7spe")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_bnunx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}]
+
+[node name="santi conserje" instance=ExtResource("1_bij4e")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_d7uag")

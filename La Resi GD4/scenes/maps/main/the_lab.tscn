@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cipwu7tlph333"]
+
+[ext_resource type="PackedScene" uid="uid://d0p16p3uxpo8s" path="res://scenes/maps/sets/the_lab_set.tscn" id="1_kba7m"]
+[ext_resource type="PackedScene" uid="uid://clhdcglg10ius" path="res://scenes/static people/yoly_cocinera.tscn" id="2_21bje"]
+[ext_resource type="PackedScene" uid="uid://bm00qqrlbn4wg" path="res://scenes/static people/celeste_cocinera.tscn" id="3_50cfk"]
+[ext_resource type="Script" path="res://scenes/static people/yoly_cocinera.gd" id="3_e60ns"]
+[ext_resource type="PackedScene" uid="uid://bjdp8e326k1vb" path="res://scenes/player.tscn" id="4_1ghre"]
+
+[node name="The Lab" type="Node2D"]
+
+[node name="The Lab Set" parent="." instance=ExtResource("1_kba7m")]
+scale = Vector2(5, 5)
+
+[node name="Static People" type="Node2D" parent="."]
+
+[node name="yoly cocinera" parent="Static People" instance=ExtResource("2_21bje")]
+position = Vector2(248, 920)
+script = ExtResource("3_e60ns")
+
+[node name="celeste cocinera" parent="Static People" instance=ExtResource("3_50cfk")]
+position = Vector2(232, 536)
+
+[node name="Player" parent="." instance=ExtResource("4_1ghre")]
+position = Vector2(816, 360)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 2040
+limit_bottom = 1080

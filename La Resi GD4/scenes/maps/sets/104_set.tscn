@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://cm6obw3c4fhii"]
+
+[ext_resource type="Texture2D" uid="uid://d1qi41q1lp3lp" path="res://art/rooms/104/background.png" id="1_0pmun"]
+[ext_resource type="Texture2D" uid="uid://cc83m5elc8xlk" path="res://art/rooms/104/floor.png" id="2_ck8qq"]
+[ext_resource type="Texture2D" uid="uid://b66ksf5bs4t4g" path="res://art/rooms/104/vertical_walls.png" id="3_7xowo"]
+[ext_resource type="Texture2D" uid="uid://bdwxpbaerj0xw" path="res://art/rooms/104/walls_A.png" id="4_bbs22"]
+[ext_resource type="Texture2D" uid="uid://dda3e7kd7dvbp" path="res://art/rooms/104/walls_B.png" id="5_4552u"]
+[ext_resource type="Texture2D" uid="uid://bedhetihegx8m" path="res://art/rooms/104/walls_C.png" id="6_ivv2s"]
+[ext_resource type="Texture2D" uid="uid://dqsitjykcqrf4" path="res://art/rooms/104/walls_D.png" id="7_6n26t"]
+[ext_resource type="Texture2D" uid="uid://pnn47ju2da0j" path="res://art/rooms/104/windows.png" id="8_3v5ui"]
+[ext_resource type="Texture2D" uid="uid://c1gon2oa42tnk" path="res://art/rooms/104/shadows_A.png" id="9_4v4g1"]
+[ext_resource type="Texture2D" uid="uid://dago833mk81rl" path="res://art/rooms/104/shadows_B.png" id="10_l8ghq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rfbw3"]
+distance = -104.0
+
+[node name="104 Set" type="StaticBody2D"]
+z_as_relative = false
+scale = Vector2(5, 5)
+
+[node name="background" type="Sprite2D" parent="."]
+z_as_relative = false
+position = Vector2(-2.38419e-07, -4.76837e-07)
+texture = ExtResource("1_0pmun")
+
+[node name="floor" type="Sprite2D" parent="."]
+z_as_relative = false
+position = Vector2(1.52588e-05, 7.62939e-06)
+texture = ExtResource("2_ck8qq")
+
+[node name="vertical walls" type="Sprite2D" parent="."]
+z_index = 9
+z_as_relative = false
+position = Vector2(0, 60)
+texture = ExtResource("3_7xowo")
+offset = Vector2(0, -60)
+
+[node name="walls D" type="Sprite2D" parent="."]
+z_as_relative = false
+position = Vector2(1.52588e-05, 7.62939e-06)
+texture = ExtResource("7_6n26t")
+
+[node name="windows" type="Sprite2D" parent="walls D"]
+z_index = 1
+texture = ExtResource("8_3v5ui")
+
+[node name="walls C" type="Sprite2D" parent="."]
+z_index = 9
+z_as_relative = false
+position = Vector2(0, 37)
+texture = ExtResource("6_ivv2s")
+offset = Vector2(0, -37)
+
+[node name="walls B" type="Sprite2D" parent="."]
+z_index = 9
+z_as_relative = false
+position = Vector2(0, 68)
+texture = ExtResource("5_4552u")
+offset = Vector2(0, -68)
+
+[node name="walls A" type="Sprite2D" parent="."]
+z_index = 15
+z_as_relative = false
+position = Vector2(-5.68434e-14, -1.19209e-07)
+texture = ExtResource("4_bbs22")
+
+[node name="shadows A" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(-5.68434e-14, -1.19209e-07)
+texture = ExtResource("9_4v4g1")
+
+[node name="shadows B" type="Sprite2D" parent="."]
+z_index = 9
+position = Vector2(0, 68)
+texture = ExtResource("10_l8ghq")
+offset = Vector2(0, -68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.8)
+shape = SubResource("WorldBoundaryShape2D_rfbw3")

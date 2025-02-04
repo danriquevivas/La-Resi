@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dragc85r0ssdy"]
+
+[ext_resource type="Texture2D" uid="uid://djl05f04i1pbw" path="res://art/rooms/lobby.png" id="1_sah1p"]
+
+[node name="Lobby Set" type="StaticBody2D"]
+scale = Vector2(4, 4)
+
+[node name="Lobby" type="Sprite2D" parent="."]
+position = Vector2(528, 312)
+texture = ExtResource("1_sah1p")

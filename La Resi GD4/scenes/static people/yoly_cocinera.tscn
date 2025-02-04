@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://clhdcglg10ius"]
+
+[ext_resource type="PackedScene" uid="uid://6hyb6m1htr86" path="res://scenes/static people/static_person.tscn" id="1_sgrdl"]
+[ext_resource type="Texture2D" uid="uid://bloekluyxr5he" path="res://art/characters/27-yoly_cocinera_sprites/yoly_cocinera-idle-animation.png" id="2_b686f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4rrx"]
+atlas = ExtResource("2_b686f")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl4h4"]
+atlas = ExtResource("2_b686f")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xa3yx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4rrx")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cl4h4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}]
+
+[node name="yoly cocinera" instance=ExtResource("1_sgrdl")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_xa3yx")
+flip_h = true
